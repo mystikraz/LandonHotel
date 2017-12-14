@@ -1,0 +1,11 @@
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\bin\Debug\netcoreapp2.0\LandonApi.deps.json
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\bin\Debug\netcoreapp2.0\LandonApi.runtimeconfig.json
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\bin\Debug\netcoreapp2.0\LandonApi.runtimeconfig.dev.json
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\bin\Debug\netcoreapp2.0\LandonApi.dll
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\bin\Debug\netcoreapp2.0\LandonApi.pdb
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.csprojResolveAssemblyReference.cache
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.csproj.CoreCompileInputs.cache
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.AssemblyInfoInputs.cache
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.AssemblyInfo.cs
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.dll
+E:\Raj\Visual studio 2017\LandonApi\LandonApi\obj\Debug\netcoreapp2.0\LandonApi.pdb

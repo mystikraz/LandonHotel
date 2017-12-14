@@ -1,0 +1,35 @@
+        private static void RewriteLinksInNestedObjects(
+            IEnumerable<PropertyInfo> objectProperties,
+            object obj,
+            LinkRewriter rewriter)
+        {
+            foreach (var objectProperty in objectProperties)
+            {
+                if (objectProperty.PropertyType == typeof(string))
+                {
+                    continue;
+                }
+
+                var typeInfo = objectProperty.PropertyType.GetTypeInfo();
+                if (typeInfo.IsClass)
+                {
+                    RewriteAllLinks(objectProperty.GetValue(obj), rewriter);
+                }
+            }
+        }
+
+        private static void RewriteLinksInArrays(
+            IEnumerable<PropertyInfo> arrayProperties,
+            object obj,
+            LinkRewriter rewriter)
+        {
+            foreach (var arrayProperty in arrayProperties)
+            {
+                var array = arrayProperty.GetValue(obj) as Array ?? new Array[0];
+
+                foreach (var element in array)
+                {
+                    RewriteAllLinks(element, rewriter);
+                }
+            }
+        }

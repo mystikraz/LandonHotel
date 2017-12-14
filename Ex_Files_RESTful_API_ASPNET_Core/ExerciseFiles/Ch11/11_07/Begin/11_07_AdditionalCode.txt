@@ -1,0 +1,17 @@
+// Map some of the default claim names to the proper OpenID Connect claim names
+services.Configure<IdentityOptions>(opt =>
+{
+    opt.ClaimsIdentity.UserNameClaimType = OpenIdConnectConstants.Claims.Name;
+    opt.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Subject;
+    opt.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;
+});
+
+// Add OpenIddict services
+services.AddOpenIddict<Guid>(opt =>
+{
+    opt.AddEntityFrameworkCoreStores<HotelApiContext>();
+    opt.AddMvcBinders();
+
+    opt.EnableTokenEndpoint("/token");
+    opt.AllowPasswordFlow();
+});
