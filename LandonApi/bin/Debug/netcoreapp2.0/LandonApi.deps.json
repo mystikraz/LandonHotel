@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "bf2fa39bd487900a883ba09fb48ad66acaf40d8e"
+    "signature": "9ffdb935db0fbc38ff95578479cfa7a318322c7a"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
       "LandonApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.3",
+          "Microsoft.AspNetCore.Mvc.Versioning": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.1"
         },
@@ -1027,6 +1028,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/2.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.1": {
@@ -4677,6 +4689,13 @@
       "sha512": "sha512-nuBEw70GCe9Lr8bGgWnsZhdmyI6awR6H6I8ECgYjXejcRlrBcgVEriRLtu1mrGHMkdW0wWh7z9CFePihUlSfOg==",
       "path": "microsoft.aspnetcore.mvc.taghelpers/2.0.1",
       "hashPath": "microsoft.aspnetcore.mvc.taghelpers.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wgjaPDC7Cz/nGf9z/P4ZBSyUYuAW0jZl5NMMjn2wPUbeWiYqa5y2HQEr6jsroielAKJATDOFO7BI/iibJ4HKnA==",
+      "path": "microsoft.aspnetcore.mvc.versioning/2.0.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.2.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.1": {
       "type": "package",
