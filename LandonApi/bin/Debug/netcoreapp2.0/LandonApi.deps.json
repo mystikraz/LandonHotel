@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "9ffdb935db0fbc38ff95578479cfa7a318322c7a"
+    "signature": "dcfba3e827a6dc3671dd58049666728a17518d3c"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,8 @@
           "Microsoft.AspNetCore.All": "2.0.3",
           "Microsoft.AspNetCore.Mvc.Versioning": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.1"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.1",
+          "NWebsec.AspNetCore.Middleware": "1.1.0"
         },
         "runtime": {
           "LandonApi.dll": {}
@@ -2512,6 +2513,32 @@
         },
         "compile": {
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
+        }
+      },
+      "NWebsec.AspNetCore.Core/1.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1",
+          "NETStandard.Library": "2.0.0",
+          "System.Text.RegularExpressions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NWebsec.AspNetCore.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/NWebsec.AspNetCore.Core.dll": {}
+        }
+      },
+      "NWebsec.AspNetCore.Middleware/1.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1",
+          "NETStandard.Library": "2.0.0",
+          "NWebsec.AspNetCore.Core": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NWebsec.AspNetCore.Middleware.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/NWebsec.AspNetCore.Middleware.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -5480,6 +5507,20 @@
       "sha512": "sha512-WCkN68c8q+USG+Ot1MmBDH+9DUo5dk7UB0QDMiwCYhrH7ZoFLKFGGNzJ8C3LTR1DvB1LW9BOxKeznnZznKiCTA==",
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
+    },
+    "NWebsec.AspNetCore.Core/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LKyL2tmHjc0w/OUWt5TlACNCjtbKL0HP/Wn9rKDkLPXgsCxfn273jisoxEbYa+PsnPjifSwrKE0zMcGmFPE7uQ==",
+      "path": "nwebsec.aspnetcore.core/1.1.0",
+      "hashPath": "nwebsec.aspnetcore.core.1.1.0.nupkg.sha512"
+    },
+    "NWebsec.AspNetCore.Middleware/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PlZ12p+ouSJXj5/6aFL26AI18VryK3+FH+sOgt7Cj+S5uUu1HdqD2FZXWts0P4Cf5gY8a2gzahV5KKY4VP0gug==",
+      "path": "nwebsec.aspnetcore.middleware/1.1.0",
+      "hashPath": "nwebsec.aspnetcore.middleware.1.1.0.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
