@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 
 namespace LandonApi
 {
@@ -22,14 +23,14 @@ namespace LandonApi
         private readonly int? _httpsPort;
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            //Configuration = configuration;
+            Configuration = configuration;
 
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{ env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+            //var builder = new ConfigurationBuilder()
+            //    .SetBasePath(env.ContentRootPath)
+            //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //    .AddJsonFile($"appsettings.{ env.EnvironmentName}.json", optional: true)
+            //    .AddEnvironmentVariables();
+            //Configuration = builder.Build();
 
             //Get the HTTPS port (only in development)
             if (env.IsDevelopment())
@@ -49,6 +50,10 @@ namespace LandonApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Use an in-memory dataase for quick dev and testing
+            //TODO: Swap out a real dataabse in production
+            services.AddDbContext<HotelApiContext>(opt=>opt.UseInMemoryDatabase());
+
             services.AddMvc(opt=>
             {
                 opt.Filters.Add(typeof(JsonExceptionFilter));
@@ -76,7 +81,9 @@ namespace LandonApi
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+               // app.UseDeveloperExceptionPage();
+                var context = app.ApplicationServices.GetRequiredService<HotelApiContext>();
+                AddTestData(context);
 
             }
 
@@ -90,6 +97,23 @@ namespace LandonApi
 
 
             app.UseMvc();
+        }
+        private static void AddTestData(HotelApiContext context)
+        {
+            context.Rooms.Add(new RoomEntity
+            {
+                Id = Guid.Parse("301df04d-8679-4b1b-1b92-0a586ae53d08"),
+                Name = "Oxford Suite",
+                Rate = 10119,
+            });
+            //context.Rooms.Add(new RoomEntity
+            //{
+            //    Id = Guid.Parse("301df04d-8679-4b1b-1b92-0a586ae53d10"),
+            //    Name = "Picadilly Suite",
+            //    Rate = 10119,
+            //});
+
+            context.SaveChanges();
         }
     }
 }
