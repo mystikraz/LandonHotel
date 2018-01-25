@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LandonApi.Controllers
 {
-    [Produces("application/json")]
+    //[Produces("application/json")]
     //[Route("api/Root")]
     [Route("/")]
     [ApiVersion("1.0")]

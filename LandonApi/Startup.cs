@@ -56,6 +56,13 @@ namespace LandonApi
 
             services.AddMvc(opt=>
             {
+                var jsonFormatter = opt.OutputFormatters.OfType<JsonOutputFormatter>().Single();
+                opt.OutputFormatters.Remove(jsonFormatter);
+                opt.OutputFormatters.Add(new IonOutputFormatter(jsonFormatter));
+
+
+
+
                 opt.Filters.Add(typeof(JsonExceptionFilter));
 
                 //Require HTTPS for all controllers
