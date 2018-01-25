@@ -56,6 +56,8 @@ namespace LandonApi
 
             services.AddMvc(opt=>
             {
+
+                //to add ion+json
                 var jsonFormatter = opt.OutputFormatters.OfType<JsonOutputFormatter>().Single();
                 opt.OutputFormatters.Remove(jsonFormatter);
                 opt.OutputFormatters.Add(new IonOutputFormatter(jsonFormatter));
@@ -71,14 +73,17 @@ namespace LandonApi
                 opt.Filters.Add(typeof(RequireHttpsAttribute));
             });
 
+            //to make lowercase
             services.AddRouting(opt => opt.LowercaseUrls = true);
+
+            //for api verasioning(install in Nuget packet manager=>Microsoft.AspNetCore.Mvc.Versioning)
             services.AddApiVersioning(opt =>
             {
                 opt.ApiVersionReader = new MediaTypeApiVersionReader();
                 opt.AssumeDefaultVersionWhenUnspecified = true;
                 opt.ReportApiVersions = true;
                 opt.DefaultApiVersion=new ApiVersion(1, 0);
-                opt.ApiVersionSelector = new CurrentImplementationApiVersionSelector(opt);
+                opt.ApiVersionSelector = new CurrentImplementationApiVersionSelector(opt);//uses the current or newest Api version if no version is requested by the client
             });
             services.Configure<HotelInfo>(Configuration.GetSection("Info"));
         }

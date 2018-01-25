@@ -180,3 +180,5 @@ LandonApi.pdb
 /LandonApi/bin/Debug/netcoreapp2.0/LandonApi.pdb
 /LandonApi/obj/Debug/netcoreapp2.0/LandonApi.dll
 /LandonApi/obj/Debug/netcoreapp2.0/LandonApi.pdb
+*.json
+*.cache
